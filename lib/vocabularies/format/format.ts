@@ -84,7 +84,7 @@ const def: CodeKeywordDefinition = {
           self.logger.warn(unknownMsg())
           return
         }
-        throw new Error(unknownMsg())
+        self.logger.warn(unknownMsg()) // throw new Error(unknownMsg())
 
         function unknownMsg(): string {
           return `unknown format "${schema as string}" ignored in schema at path "${errSchemaPath}"`
